@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-	<title>Trainee | Data Barang</title>
+	<title>Data Barang</title>
 @endsection
 
 @section('content')

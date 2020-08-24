@@ -12,7 +12,7 @@
                     @php
                         $url=Request::path();
                     @endphp
-                    @if (Auth::check())
+                    {{-- @if (Auth::check())
                         <div class="header-user-menu">
                             <div class="header-user-name">
                                 Welcome, {{ Auth::user()->name }}
@@ -22,7 +22,7 @@
                                 <li><a href="{{ url('user-logout') }}">Log Out</a></li>
                             </ul>
                         </div>
-                    @endif
+                    @endif --}}
                     <div class="nav-holder main-menu">
                         <nav>
                             <ul>

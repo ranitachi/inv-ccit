@@ -21,6 +21,7 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
     Route::resource('data-barang','DataBarangController');
 });
 
+Route::get('detail-barang/{kode}','HomeController@detail_barang')->name('beranda');
 Route::get('/','HomeController@index')->name('beranda');
 Route::get('dashboard',function(){
     return redirect('user-profil');

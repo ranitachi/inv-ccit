@@ -1,0 +1,198 @@
+.sub-footer {
+     margin-top:0px !important;
+}
+footer.main-footer{
+    padding-top:0px !important;
+}
+.pdr-5{
+    padding-right:5px !important;
+}
+.pdl-5{
+    padding-left:5px !important;
+}
+.pdrl-5{
+    padding:0 5px !important;
+}
+.pdrl-15{
+    padding:0 15px !important;
+}
+.pb-10{
+    padding-bottom:10px !important;
+}
+.padding-10{
+    padding:10px !important;
+}
+.padding-15{
+    padding:15px !important;
+}
+.mrl-5{
+    margin:0 5px !important;
+}
+.fz-9
+{
+    font-size:9px !important;
+}
+.fz-10
+{
+    font-size:10px !important;
+}
+.fz-20
+{
+    font-size:20px !important;
+}
+.fz-25
+{
+    font-size:25px !important;
+}
+.fz-35
+{
+    font-size:35px !important;
+}
+.text-center{
+    text-align:center !important;
+}
+.text-left{
+    text-align:left !important;
+}
+.text-right{
+    text-align:right !important;
+}
+.label {
+  color: white;
+  padding: 3px 6px;
+  border-radius: 6px;
+}
+.success {background-color: #4CAF50 !important;} /* Green */
+.info {background-color: #2196F3 !important;} /* Blue */
+.warning {background-color: #ff9800 !important;} /* Orange */
+.danger {background-color: #f44336 !important;} /* Red */
+.other {background-color: #e7e7e7 !important; color: black !important;} /* Gray */
+.default {background-color: #ababab !important; color: black !important;} /* Gray */
+.ijo {background:#5ECFB1 !important; color: black !important;} /* Gray */
+
+.label-new {
+  color: white;
+  padding: 3px 6px;
+  border-radius: 6px;
+}
+.v-middle
+{
+    vertical-align: middle !important;;
+}
+.v-top
+{
+    vertical-align: top !important;;
+}
+
+.tombol {
+  /* background-color: DodgerBlue; Blue background */
+  border: none; /* Remove borders */
+  color: white; 
+  padding: 4px 8px; /* Some padding */
+  font-size: 12px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  border-radius: 4px;
+}
+
+/* Darker background on mouse-over */
+.tombol:hover {
+  background-color: RoyalBlue;
+}
+
+ tbody, tfoot, thead, tr, th, td
+{
+    vertical-align:top !important;
+}
+
+th, td{
+    padding:20px 10px !important;
+}
+.pure-table-odd
+{
+    background:#ddd !important;
+}
+
+ .dataTables_length{
+    margin:10px !important;
+}
+.dataTables_filter{
+    margin:10px !important;
+}
+.dataTables_filter input{
+    padding:10px !important;
+}
+
+
+.thumb {
+  border: 1px solid #ddd; /* Gray border */
+  border-radius: 7px;  /* Rounded border */
+  padding: 5px; /* Some padding */
+  height: 100px; /* Set a small width */
+  width:auto;
+}
+
+/* Add a hover effect (blue shadow) */
+.thumb:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+.parsley-required,
+.parsley-custom-error-message{
+    color:#ff0000;
+}
+.custom-form input
+{
+    margin-bottom:0px !important;
+    padding-left:15px !important;
+    width:100%
+}
+.select2-selection
+{
+    text-align: left !important;
+    border:1px #ccc solid !important;
+    height:30px !important;
+}
+.select2-results__group{
+    font-weight: bold !important;
+    color:#2F3B59 !important;
+}
+.select2-results__option
+{
+    text-align: left !important;
+    padding-left:2em !important;
+    color:blue !important;
+}
+
+
+/* @media only screen and (max-width: 1064px){
+
+    .logo-holder img {
+        width: 30px !important;
+        height: auto !important;
+    }
+} */
+.accordion {
+  background-color: #4DB7FE;
+  color: #fff;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #4DB7FE;
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  text-align: left !important;
+}

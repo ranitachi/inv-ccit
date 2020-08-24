@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-	<title>Data Barang</title>
+	<title>Kategori Barang</title>
 @endsection
 
 @section('content')
@@ -9,14 +9,14 @@
     <div class="col-md-12">
         <div class="widget">
             <header class="widget-header">
-                <h4 class="widget-title"><i class="fa fa-list text-success"></i> &nbsp; List Data Barang</h4>
+                <h4 class="widget-title"><i class="fa fa-list text-success"></i> &nbsp; List Kategori Barang</h4>
             </header><!-- .widget-header -->
             <hr class="widget-separator">
             <div class="widget-body">
                 <div class="row"  style="margin-bottom:20px;">
                     <div class="col-md-12">
-                        <a class="btn btn-info btn-md pull-right" href="{{ route('data-barang.create') }}">
-                            <i class="fa fa-plus-circle"></i>&nbsp;Add New Data
+                        <a class="btn btn-info btn-md pull-right" href="{{ route('kategori-barang.create') }}">
+                            <i class="fa fa-plus-circle"></i>&nbsp;Add New Kategori
                         </a>
                     </div>
                 </div>
@@ -24,26 +24,19 @@
                     <thead>
                         <tr>
                             <th width="10">#</th>
-                            <th>Foto</th>
                             <th>Kategori</th>
-                            <th>Kode Barang</th>
-                            <th>Nama Barang</th>
+                            <th>Keterangan</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($databarang as $no => $item)
+                        @foreach ($kategori as $no => $item)
                             <tr>
                                 <td width="10" class="text-center">{{ ($no+1) }}</td>
+                                <td class="text-left"><b>{{ $item->kategori }}</b></td>
+                                <td class="text-left"><b>{!! $item->keterangan !!}</b></td>
                                 <td class="text-center">
-                                    <img src="{{ url('images/'.$item->foto) }}" style="height:100px;">
-                                </td>
-                                <td class="text-left"><b>{{ isset($item->kategori->kategori) ? $item->kategori->kategori : '' }}</b></td>
-                                <td class="text-left"><b>{{ $item->kode_barang }}</b></td>
-                                <td class="text-left"><b>{{ $item->nama_barang }}</b></td>
-                                <td class="text-center">
-                                    <a style="cursor: pointer" href="{{ route('data-barang.show',$item->id) }}" class="btn btn-xs btn-info" data-toggle="tooltip" title="Barang Detail"><i class="fa fa-eye"></i></a>
-									<a style="cursor: pointer" href="{{ route('data-barang.edit',$item->id) }}" class="btn btn-xs btn-warning btn-edit"><i class="fa fa-pencil"></i></a>
+                                   <a style="cursor: pointer" href="{{ route('kategori-barang.edit',$item->id) }}" class="btn btn-xs btn-warning btn-edit"><i class="fa fa-pencil"></i></a>
 									<a style="cursor: pointer" class="btn btn-xs btn-danger btn-delete" data-value="{{ $item->id }}" data-toggle="modal" data-target="#modal-delete"><i class="fa fa-trash"></i></a>
 								</td>
                             </tr>
@@ -85,7 +78,7 @@
 
 		$('.table').on('click', '.btn-delete', function(){
 			let id = $(this).data('value')
-			$('#form-delete').attr('action', "{{ url('admin/data-barang') }}/" + id)	
+			$('#form-delete').attr('action', "{{ url('admin/kategori-barang') }}/" + id)	
         })
 	</script>
 @endsection

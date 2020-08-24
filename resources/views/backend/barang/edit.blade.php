@@ -39,7 +39,19 @@
                                     <label>Nama Barang <span class="text-danger">(*)</span></label>
                                     <input type="text" class="form-control" name="nama_barang"  id="nama_barang" required data-parsley-error-message="Nama Barang is Required" value="{{ $get->nama_barang }}">
                                 </div>
-                                
+                                <div class="form-group">
+                                    <label>Kategori <span class="text-danger">(*)</span></label>
+                                    <select class="form-control" name="kategori_id"  id="kategori_id" required data-parsley-error-message="Kategori Barang is Required">
+                                        <option></option>
+                                        @foreach ($kategori as $item)
+                                            @if ($item->id==$get->kategori_id)
+                                                <option value="{{ $item->id }}" selected="selected">{{ $item->kategori }}</option>
+                                            @else
+                                                <option value="{{ $item->id }}">{{ $item->kategori }}</option>
+                                            @endif
+                                        @endforeach
+                                    </select>
+                                </div>
                                 <div class="form-group">
                                     <label>Keterangan <span class="text-danger">(*)</span></label>
                                     <textarea class="form-control summernote" name="comment"  id="comment" required data-parsley-error-message="Keterangan Barang is Required">{{ $get->keterangan }}</textarea>

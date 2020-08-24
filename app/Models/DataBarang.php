@@ -9,4 +9,9 @@ class DataBarang extends Model
 {
     use SoftDeletes;
     protected $table='data_barang';
+
+    function kategori()
+    {
+        return $this->belongsTo('App\Models\KategoriBarang','kategori_id');
+    }
 }

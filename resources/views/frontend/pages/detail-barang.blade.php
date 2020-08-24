@@ -38,11 +38,15 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-7">
-                                                    <div class="list-single-main-item fl-wrap">
-                                                        <div class="list-single-main-item-title fl-wrap">
-                                                            Kode Barang : {{ $get->kode_barang }}
-                                                            <h3>{{ $get->nama_barang }}</h3>
+                                                    <div class="list-single-main-item fl-wrap text-left">
+                                                        <div class="list-single-main-item-title fl-wrap text-left">
+                                                            <u>Kode Barang</u> : <b>{{ $get->kode_barang }}</b>
                                                         </div>
+                                                        <div class="list-single-main-item-title fl-wrap text-left">
+                                                            <u>Kategori Barang</u> : <b>{{ isset($get->kategori->kategori) ? $get->kategori->kategori : '' }}</b>
+                                                            <h3>Nama Barang : {{ $get->nama_barang }}</h3>
+                                                        </div>
+                                                        <u>Keterangan</u> : <b><br><br></b>
                                                         {!! $get->keterangan !!}
                                                         <span class="fw-separator"></span>
                                                     </div>

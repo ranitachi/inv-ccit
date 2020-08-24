@@ -19,6 +19,7 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
     Route::get('dashboard','DashboardController@index')->name('dashboard');
     
     Route::resource('data-barang','DataBarangController');
+    Route::resource('kategori-barang','KategoriBarangController');
 });
 
 Route::get('detail-barang/{kode}','HomeController@detail_barang')->name('beranda');
@@ -26,7 +27,7 @@ Route::get('detail-barang/{kode}','HomeController@detail_barang')->name('beranda
 Route::get('/','HomeController@data_barang')->name('beranda');
 Route::get('data-barang','HomeController@data_barang')->name('beranda');
 Route::get('dashboard',function(){
-    return redirect('user-profil');
+    return redirect('admin/dashboard');
 });
 
 //USER LOGIN

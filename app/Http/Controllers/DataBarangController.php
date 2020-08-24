@@ -5,6 +5,7 @@ use DB;
 use Session;
 use Validator;
 use App\Models\DataBarang;
+use App\Models\KategoriBarang as Kategori;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -12,8 +13,9 @@ class DataBarangController extends Controller
 {
     public function index()
     {
-        $databarang = DataBarang::orderBy('kode_barang')->get();
-        return view('backend.barang.index',compact('databarang'));
+        $kategori = Kategori::orderBy('kategori')->get();
+        $databarang = DataBarang::with('kategori')->orderBy('kode_barang')->get();
+        return view('backend.barang.index',compact('databarang','kategori'));
     }
     
     public function create()
@@ -23,12 +25,13 @@ class DataBarangController extends Controller
     
     public function edit($id)
     {
+        $kategori = Kategori::orderBy('kategori')->get();
         $get = DataBarang::find($id);
-        return view('backend.barang.edit',compact('get','id'));
+        return view('backend.barang.edit',compact('get','id','kategori'));
     }
     public function show($id)
     {
-        $get = DataBarang::find($id);
+        $get = DataBarang::where('id',$id)->with('kategori')->first();
         return view('backend.barang.show',compact('get','id'));
     }
     
@@ -36,6 +39,7 @@ class DataBarangController extends Controller
     {
         $rules = [
             'foto' => 'required',
+            'kategori_id' => 'required',
             'kode_barang' => 'required',
             'nama_barang' => 'required',
             'comment' => 'required',
@@ -61,6 +65,7 @@ class DataBarangController extends Controller
             $databarang = new DataBarang;
             $databarang->kode_barang=$request->kode_barang;
             $databarang->nama_barang=$request->nama_barang;
+            $databarang->kategori_id=$request->kategori_id;
             $databarang->foto=$foto;
             $databarang->keterangan=$request->comment;
             $databarang->save();
@@ -82,6 +87,7 @@ class DataBarangController extends Controller
         $rules = [
             'kode_barang' => 'required',
             'nama_barang' => 'required',
+            'kategori_id' => 'required',
             'comment' => 'required',
         ];
         $validator = Validator::make($request->all(), $rules);
@@ -99,6 +105,7 @@ class DataBarangController extends Controller
             $databarang = DataBarang::find($id);
             $databarang->kode_barang=$request->kode_barang;
             $databarang->nama_barang=$request->nama_barang;
+            $databarang->kategori_id=$request->kategori_id;
             if ($request->has('foto')) {
                 $file = $request->foto;
                 $filename = time().'.'.$file->getClientOriginalExtension();

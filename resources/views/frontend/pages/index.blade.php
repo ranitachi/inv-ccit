@@ -30,6 +30,7 @@
                                                     <tr>
                                                         <th width="10">#</th>
                                                         <th>Foto</th>
+                                                        <th>Kategori Barang</th>
                                                         <th>Kode Barang</th>
                                                         <th>Nama Barang</th>
                                                         <th>Detail</th>
@@ -42,6 +43,7 @@
                                                             <td class="text-center">
                                                                 <img src="{{ url('images/'.$item->foto) }}" style="height:100px;">
                                                             </td>
+                                                            <td class="text-left"><b>{{ $item->kategori->kategori }}</b></td>
                                                             <td class="text-left"><b>{{ $item->kode_barang }}</b></td>
                                                             <td class="text-left"><b>{{ $item->nama_barang }}</b></td>
                                                             <td class="text-center">

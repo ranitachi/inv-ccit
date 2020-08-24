@@ -34,6 +34,12 @@
           <div class="text-muted" style="margin-left: 18px; margin-bottom: 10px">Master Data</div>
 
           <li class="{{ strpos($menu,'organization')!==false ? 'active' : '' }}">
+            <a href="{{ route('kategori-barang.index') }}">
+              <i class="menu-icon fa fa-building"></i>
+              <span class="menu-text">Kategori Barang</span>
+            </a>
+          </li>
+          <li class="{{ strpos($menu,'organization')!==false ? 'active' : '' }}">
             <a href="{{ route('data-barang.index') }}">
               <i class="menu-icon fa fa-building"></i>
               <span class="menu-text">Data Barang</span>

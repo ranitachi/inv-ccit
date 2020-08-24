@@ -37,8 +37,5 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    function trainee()
-    {
-        return $this->hasOne('App\Models\Trainee','user_id');
-    }
+
 }

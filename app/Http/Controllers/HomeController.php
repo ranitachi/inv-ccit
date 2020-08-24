@@ -35,12 +35,12 @@ class HomeController extends Controller
 
     public function detail_barang($kode)
     {
-        $get = DataBarang::where('kode_barang',$kode)->first();
+        $get = DataBarang::where('kode_barang',$kode)->with('kategori')->first();
         return view('frontend.pages.detail-barang',compact('get'));
     }
     public function data_barang()
     {
-        $databarang = DataBarang::orderBy('kode_barang')->get();
+        $databarang = DataBarang::with('kategori')->orderBy('kode_barang')->get();
         return view('frontend.pages.index',compact('databarang'));
     }
 }

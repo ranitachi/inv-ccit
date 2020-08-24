@@ -27,7 +27,7 @@ class UserController extends Controller
     public function index(Request $request)
     {
         if(Auth::check()){
-            return redirect('user-profil'); 
+            return redirect('admin/dashboard'); 
         }
         $tab='login';
         if(isset($request->tab))

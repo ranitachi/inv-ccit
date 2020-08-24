@@ -29,6 +29,7 @@ Route::get('dashboard',function(){
 
 //USER LOGIN
 Route::get('user-profil','UserController@profil')->name('user-profil');
+Route::get('user-login','UserController@index')->name('user-login');
 Route::post('user-login-proses','UserController@proses')->name('login-proses');
 Route::get('user-logout',function(){
     Auth::logout();

@@ -4,7 +4,7 @@
         <ul class="footer-menu pull-right">
           <li><a href="javascript:void(0)"></a></li>
         </ul>
-        <div class="copyright pull-left">Copyright &copy; JICA 2020</div>
+        <div class="copyright pull-left">Copyright &copy; Data Barang 2020</div>
       </div>
     </footer>
 </div>

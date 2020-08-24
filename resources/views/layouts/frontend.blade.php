@@ -18,6 +18,7 @@
         <link type="text/css" rel="stylesheet" href="{{ asset('backend') }}/css/color.css">
         <link type="text/css" rel="stylesheet" href="{{ asset('css') }}/css.css">
         <link type="text/css" rel="stylesheet" href="{{ asset('css') }}/csp.css">
+        <link rel="stylesheet" href="{{ asset('theme') }}/assets/css/bootstrap.css">
         <!--=============== favicons ===============-->
         <link rel="shortcut icon" href="{{ asset('images') }}/favicon.ico">
         

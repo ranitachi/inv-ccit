@@ -26,6 +26,7 @@ class HomeController extends Controller
         return redirect()->route('user-login');
         $berita=array();
         $skema=array();
+        
         // return $berita;
         return view('frontend.pages.index')
                 ->with('berita',$berita)
@@ -36,5 +37,10 @@ class HomeController extends Controller
     {
         $get = DataBarang::where('kode_barang',$kode)->first();
         return view('frontend.pages.detail-barang',compact('get'));
+    }
+    public function data_barang()
+    {
+        $databarang = DataBarang::orderBy('kode_barang')->get();
+        return view('frontend.pages.index',compact('databarang'));
     }
 }

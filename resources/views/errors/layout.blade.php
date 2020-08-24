@@ -11,7 +11,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
-        <style nonce="{{ csp_nonce() }}">
+        <style>
             html, body {
                 background-color: #fff;
                 color: #636b6f;

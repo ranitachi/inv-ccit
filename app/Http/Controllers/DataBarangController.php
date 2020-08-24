@@ -13,14 +13,15 @@ class DataBarangController extends Controller
 {
     public function index()
     {
-        $kategori = Kategori::orderBy('kategori')->get();
+        
         $databarang = DataBarang::with('kategori')->orderBy('kode_barang')->get();
-        return view('backend.barang.index',compact('databarang','kategori'));
+        return view('backend.barang.index',compact('databarang'));
     }
     
     public function create()
     {
-        return view('backend.barang.create');
+        $kategori = Kategori::orderBy('kategori')->get();
+        return view('backend.barang.create',compact('kategori'));
     }
     
     public function edit($id)

@@ -50,6 +50,7 @@
                         @endforeach
                     </tbody>
                 </table>
+               
             </div><!-- .widget-body -->
         </div><!-- .widget -->
     </div>

@@ -40,7 +40,7 @@ class HomeController extends Controller
     }
     public function data_barang()
     {
-        $databarang = DataBarang::with('kategori')->orderBy('kode_barang')->get();
+        $databarang = DataBarang::with('kategori')->orderBy('kode_barang')->paginate(10);
         return view('frontend.pages.index',compact('databarang'));
     }
 }
